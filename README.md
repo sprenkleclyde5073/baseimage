@@ -10,3 +10,7 @@ For those of you who don’t know, jupyter-server-proxy is a really, really usef
 [was](https://gitpod.io/#https://github.com/sprenkleclyde5073/baseimage)
 
 
+## build
+```sh
+docker build -t base .
+```

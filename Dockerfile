@@ -63,8 +63,8 @@ ENV GITHUB_ROOT_DIR=/code/github
 RUN mkdir -p /code/github/ && \
     git clone https://github.com/microsoft/vscode-dev-containers.git ${GITHUB_ROOT_DIR}/vscode-dev-containers
 
-# nodejs 16
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
+
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
     && apt update \
     &&apt-get install -y nodejs \
     # Install npm , yarn, nvm
@@ -98,11 +98,6 @@ RUN wget -q -O frp_0.36.2_linux_386.tar.gz https://github.com/fatedier/frp/relea
     && sudo cp frp_0.36.2_linux_386/frps /usr/local/bin && sudo chmod +x /usr/local/bin/frps  \
     && rm -rdf frp_0.36.2_linux_386 
 
-RUN ssh-keyscan github.com >> ~/.ssh/known_hosts \
-    && git config --global user.name a  \
-    && git config --global user.email a@a.a \
-    && git config --global core.autocrlf input
-
 ENV vscode_commit_id=379476f0e13988d90fab105c5c19e7abc8b1dea8
 RUN mkdir -p ~/.vscode-server/bin \
     && wget -O /tmp/vscode-server.tar.gz https://update.code.visualstudio.com/commit:${vscode_commit_id}/server-linux-x64/stable \ 
@@ -110,8 +105,6 @@ RUN mkdir -p ~/.vscode-server/bin \
     && cd /tmp && tar -xf vscode-server.tar.gz \
     && mv /tmp/vscode-server-linux-x64 ~/.vscode-server/bin/${vscode_commit_id} \
     && rm /tmp/vscode-server.tar.gz
-
-RUN curl -L -o 1.vsix.zip https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-azuretools/vsextensions/vscode-docker/1.16.0/vspackage
 
 
 
