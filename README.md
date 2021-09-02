@@ -7,8 +7,6 @@ The break was in a launch of one of my own repos, I might add, where I had been 
 For those of you who don’t know, jupyter-server-proxy is a really, really useful package that lets you start up and access web applications running via a Jupyter notebook server. (See some examples here, from which the following list is taken.)
 
 
-[
-
-](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/sprenkleclyde5073/private_test1)
+[was](https://gitpod.io/#https://github.com/sprenkleclyde5073/baseimage)
 
 
