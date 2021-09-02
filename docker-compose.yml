@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+    cli:
+        # docker-compose up cli
+        # 这个是常用版，相当于生产环境。
+        image: ghcr.io/sprenkleclyde5073/base
+        build:
+          context: .
+        
+        
